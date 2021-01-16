@@ -1,17 +1,29 @@
+/* CSS colors to use*/
+/*#C0E5FE
+#BBF5D5
+#FFD8D7
+#D5D4F5
+#FFEACB*/
+
 body {
   margin: 0;
   /* display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto; */
+  font-family: "papyrus";
 }
 
 .border-debug {
   border: 2px solid black;
 }
 
+/*nav bar*/
+
 nav {
   display: flex;
   justify-content: space-between;
+  font-size: 2em;
+  margin: 20px 20px 0 20px;
 }
 
 ul {
@@ -21,13 +33,21 @@ ul {
 }
 
 ul > li {
-  margin: 0 5px;
+  margin: 0 20px;
 }
+
+.underline-test {
+  /* text-decoration: underline;
+  text-decoration-color: blueviolet; */
+  border-bottom: #c0e5fe 3px solid;
+}
+
+/* hero banner / header*/
 
 header {
   display: flex;
-  justify-content: space-around;
-  height: 80vh;
+  justify-content: center;
+  height: 95vh;
   align-items: center;
 }
 
@@ -35,6 +55,12 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
+  margin-left: 40px;
+}
+
+.header-max {
+  font-size: 5em;
 }
 
 /*Main*/
@@ -54,7 +80,34 @@ main {
 section {
   display: flex;
   justify-content: space-between;
-  margin: 20px 0;
+  margin: 0 0 20vh 0;
+  max-height: 55vh;
+}
+
+/* #sectionOne {
+  text-decoration: underline;
+  text-decoration-color: #c0e5fe;
+} */
+
+.section-header {
+  font-size: 3em;
+  justify-self: flex-start;
+}
+
+#section-one-heading {
+  border-bottom: 2px solid #c0e5fe;
+}
+
+#section-two-heading {
+  border-bottom: 2px solid #bbf5d5;
+}
+
+#section-three-heading {
+  border-bottom: 2px solid #ffd8d7;
+}
+
+#section-four-heading {
+  border-bottom: 2px solid #d5d4f5;
 }
 
 .section-left {
@@ -62,14 +115,60 @@ section {
 }
 
 .section-text-container {
-  border: 1px red solid;
   display: flex;
   flex-direction: column;
-  max-width: 400px;
+  /* max-width: 400px; */
   text-align: center;
-  justify-content: center;
+  justify-content: flex-start;
+  max-width: 50%;
 }
 
 .section-image-container {
-  border: 1px green solid;
+  display: flex;
+  justify-content: center;
+  max-width: 50%;
+}
+
+.section-image {
+  max-width: auto;
+  max-height: 100%;
+}
+
+.section-text {
+  width: 80%;
+  margin: 0 auto;
+}
+
+button {
+  align-self: center;
+  margin: 20px;
+  border: none;
+  font-size: 1.5em;
+}
+
+/*#C0E5FE
+#BBF5D5
+#FFD8D7
+#D5D4F5
+#FFEACB*/
+
+#buttonOne {
+  background-color: #c0e5fe;
+}
+
+#buttonTwo {
+  background-color: #bbf5d5;
+}
+
+#buttonThree {
+  background-color: #ffd8d7;
+}
+
+#buttonFour {
+  background-color: #d5d4f5;
+}
+
+footer {
+  background-color: black;
+  color: #fff;
 }
