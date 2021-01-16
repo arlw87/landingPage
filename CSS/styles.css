@@ -26,4 +26,50 @@ ul > li {
 
 header {
   display: flex;
+  justify-content: space-around;
+  height: 80vh;
+  align-items: center;
+}
+
+.header-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*Main*/
+main {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1440px) {
+  main {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+}
+
+/*Sections*/
+section {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.section-left {
+  order: -1;
+}
+
+.section-text-container {
+  border: 1px red solid;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  text-align: center;
+  justify-content: center;
+}
+
+.section-image-container {
+  border: 1px green solid;
 }
