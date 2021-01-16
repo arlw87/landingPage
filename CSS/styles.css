@@ -27,15 +27,33 @@ body {
 /*nav bar*/
 
 nav {
-  background-color: #fff;
+  /*sticks the nav bar to the top of the window at all times*/
   position: fixed;
   top: 0px;
   left: 0px;
+  /*********************************************************/
+
+  background-color: #fff;
   width: 96vw;
   display: flex;
   justify-content: space-between;
   font-size: 2em;
-  padding: 20px 2vw 0 2vw;
+  padding: 10px 2vw;
+}
+
+/*Fade a shadow of the nav-bar in*/
+.nav-shadow {
+  animation: shadowFadeIn ease-out 2s forwards;
+}
+
+@keyframes shadowFadeIn {
+  0% {
+  }
+  100% {
+    /* box-shadow: 5px 10px; */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  }
 }
 
 ul {
