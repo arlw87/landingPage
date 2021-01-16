@@ -38,7 +38,7 @@ sections.forEach((currentValue) => {
 let navbarList = document.createDocumentFragment();
 for (detail of sectionDetails){
     const navbarItem = document.createElement('li');
-    navbarItem.innerHTML = `<a href=#${detail.link}>${detail.title}</a>`;
+    navbarItem.innerHTML = `<a data-scroll=${detail.link}>${detail.title}</a>`;
     navbarList.appendChild(navbarItem);
 }
 
@@ -46,4 +46,12 @@ for (detail of sectionDetails){
 // //add the dynmically create nav item list to the nav bar
 document.querySelector('.nav-list').appendChild(navbarList);
 
-
+//implment the nav bar link smooth scroll
+document.querySelector('nav').addEventListener('click', (event) => {
+    const target = event.target;
+    if (target.nodeName === 'A'){
+        event.preventDefault();
+        console.log(target.dataset.scroll);
+        document.querySelector(`#${target.dataset.scroll}`).scrollIntoView({behavior: 'smooth', block: "center"});
+    }
+})

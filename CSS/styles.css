@@ -69,6 +69,7 @@ ul > li {
 a {
   text-decoration: none;
   color: black;
+  cursor: pointer;
 }
 
 .underline-test {
