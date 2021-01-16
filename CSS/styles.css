@@ -152,8 +152,10 @@ section {
 }
 
 .section-text {
-  width: 80%;
-  margin: 0 auto;
+  width: 90%;
+  margin: 5px auto;
+  text-align: justify;
+  font-size: 1.2em;
 }
 
 button {
@@ -188,4 +190,5 @@ button {
 footer {
   background-color: black;
   color: #fff;
+  height: 5vh;
 }
