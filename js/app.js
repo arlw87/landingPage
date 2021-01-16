@@ -20,25 +20,30 @@ document.addEventListener('scroll', (event) =>{
 /* dynamically create a navigation bar*/
 //returns a node list of all the elements that are section types
 const sections = document.querySelectorAll('section');
-const sectionTitles = [];
+const sectionDetails = [];
 
 //get the h2 section title from the section html
 sections.forEach((currentValue) => {
-    sectionTitles.push(currentValue.querySelector('h2').innerText);
+    const sectionObj = {
+        link: currentValue.id,
+        title: currentValue.querySelector('h2').innerText
+    }
+    sectionDetails.push(sectionObj);
+    console.log(currentValue.id);
 });
 
-console.log(sectionTitles);
+// console.log(sectionTitles);
 
 //create a html fragment to add into the navbar
 let navbarList = document.createDocumentFragment();
-for (title of sectionTitles){
+for (detail of sectionDetails){
     const navbarItem = document.createElement('li');
-    navbarItem.innerText = title;
+    navbarItem.innerHTML = `<a href=#${detail.link}>${detail.title}</a>`;
     navbarList.appendChild(navbarItem);
 }
 
-console.log(navbarList);
-//add the dynmically create nav item list to the nav bar
+// console.log(navbarList);
+// //add the dynmically create nav item list to the nav bar
 document.querySelector('.nav-list').appendChild(navbarList);
 
 
