@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  /* display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto; */
+}
+
+.border-debug {
+  border: 2px solid black;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+}
+
+ul > li {
+  margin: 0 5px;
+}
+
+header {
+  display: flex;
+}
