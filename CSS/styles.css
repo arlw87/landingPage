@@ -47,8 +47,9 @@ ul > li {
 header {
   display: flex;
   justify-content: center;
-  height: 95vh;
+  height: 90vh;
   align-items: center;
+  padding-bottom: 5vh;
 }
 
 .header-text-container {
@@ -126,12 +127,28 @@ section {
 .section-image-container {
   display: flex;
   justify-content: center;
-  max-width: 50%;
+  width: 50%;
+}
+
+#section-one-image {
+  background: url("../Images/bow.jpg") center / contain no-repeat;
+}
+
+#section-two-image {
+  background: url("../Images/discussions.jpg") center / contain no-repeat;
+}
+
+#section-three-image {
+  background: url("../Images/stock.jpg") center / contain no-repeat;
+}
+
+#section-four-image {
+  background: url("../Images/calendar.jpg") center / contain no-repeat;
 }
 
 .section-image {
-  max-width: auto;
-  max-height: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 .section-text {
