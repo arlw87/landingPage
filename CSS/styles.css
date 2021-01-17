@@ -16,7 +16,7 @@
 body {
   margin: 0;
   font-family: "papyrus";
-  animation: fadeIn ease 5s;
+  animation: fadeIn ease-in 2s;
 }
 
 @keyframes fadeIn {
@@ -75,6 +75,7 @@ ul > li {
 }
 
 .nav-item {
+  display: inline-block;
   text-decoration: none;
   color: black;
   cursor: pointer;
@@ -82,7 +83,9 @@ ul > li {
 }
 
 .nav-item:hover {
-  font-weight: bold;
+  /* an anchor has to be set to an block or inline-block for transform to work */
+  /* it doesnt work on a inline element */
+  transform: scale(1.1, 1.1);
 }
 
 /* .nav-item-section-active {
@@ -254,8 +257,17 @@ section {
 button {
   align-self: center;
   margin: 20px;
-  border: none;
+  border: 1px solid;
   font-size: 1.5em;
+  border-radius: 12px;
+  padding: 5px 10px;
+  color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
+
+button:hover {
+  box-shadow: 0px 0px 5px 1px rgb(161, 161, 161);
+  /* box-shadow: 0px 0px 5px 5px #c0e5fe; */
 }
 
 /*#C0E5FE
@@ -284,4 +296,21 @@ footer {
   background-color: black;
   color: #fff;
   height: 5vh;
+}
+
+.scroll-to-top {
+  background-color: lightsalmon;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  position: fixed;
+  top: 90vh;
+  left: 95vw;
+  display: inline;
+  /* display: none; */
+}
+
+.scroll-to-top-visible {
+  display: inline;
 }

@@ -105,3 +105,12 @@ list.forEach((value) => {
 });
 
 
+//scroll to top
+const scrollToTop = document.querySelector('.scroll-to-top');
+const topOfPage = document.querySelector('.nav-title');
+console.log(scrollToTop);
+scrollToTop.addEventListener('click', (event) => {
+    console.log('click');
+    window.scrollTo(0,0);
+});
+
