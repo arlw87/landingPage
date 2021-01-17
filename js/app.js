@@ -2,6 +2,7 @@
 //REFACTOR THIS CODE
 
 
+
 //get the navbar
 const navbar = document.querySelector('nav');
 
@@ -48,7 +49,7 @@ sections.forEach((currentValue) => {
 let navbarList = document.createDocumentFragment();
 for (detail of sectionDetails){
     const navbarItem = document.createElement('li');
-    navbarItem.innerHTML = `<a data-scroll=${detail.link}>${detail.title}</a>`;
+    navbarItem.innerHTML = `<a class="nav-item" data-scroll=${detail.link}>${detail.title}</a><div id="${detail.link}-nav-underline" class="nav-item-underline"></div>`;
     navbarList.appendChild(navbarItem);
 }
 
@@ -82,9 +83,10 @@ function onEntry(entry) {
         console.log(e.target.id);
         if(e.intersectionRatio > 0.05){
             //get nav element
-            const elem = document.querySelector(`a[data-scroll='${e.target.id}']`);
+            const elem = document.querySelector(`#${e.target.id}-nav-underline`);
+            console.log(`#${e.target.id}-nav-underline`);
             console.log(elem);
-            elem.classList.toggle('redClass');
+            elem.classList.toggle('nav-item-underline-active');
         }
     }
   }
@@ -95,13 +97,11 @@ let options = {
 
 let observer = new IntersectionObserver(onEntry, options);
 
-let target = document.querySelector('#section-one');
-let target2 = document.querySelector('#section-two');
-let target3 = document.querySelector('#section-three');
-let target4 = document.querySelector('#section-four');
+//get all the sections
+const list = document.querySelectorAll('section');
 
-console.log(target);
-observer.observe(target);
-observer.observe(target2);
-observer.observe(target3);
-observer.observe(target4);
+list.forEach((value) => {
+    observer.observe(value);
+});
+
+
