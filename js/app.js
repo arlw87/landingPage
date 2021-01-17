@@ -1,3 +1,7 @@
+//TODO:
+//REFACTOR THIS CODE
+
+
 //get the navbar
 const navbar = document.querySelector('nav');
 
@@ -15,6 +19,12 @@ document.addEventListener('scroll', (event) =>{
             navbar.classList.add(shadowClass);
         }
     }
+
+    //check to see what section you are in
+
+
+
+
 });
 
 /* dynamically create a navigation bar*/
@@ -55,3 +65,43 @@ document.querySelector('nav').addEventListener('click', (event) => {
         document.querySelector(`#${target.dataset.scroll}`).scrollIntoView({behavior: 'smooth', block: "center"});
     }
 })
+
+//try and see what is on the screen
+//using intersection observer
+
+
+//This is working but i think i should look at transistions in and out of sections
+//TODO:
+//-Investigation how to know if you are entering or exiting the section
+//-Dont toggle class add and remove it and check if the classList contains it
+//-use the bottom border with the right colours to hightlight it
+function onEntry(entry) {
+    for (e of entry){
+        console.log(e);
+        console.log(e.intersectionRatio);
+        console.log(e.target.id);
+        if(e.intersectionRatio > 0.05){
+            //get nav element
+            const elem = document.querySelector(`a[data-scroll='${e.target.id}']`);
+            console.log(elem);
+            elem.classList.toggle('redClass');
+        }
+    }
+  }
+
+let options = {
+    threshold: [0.9]
+};
+
+let observer = new IntersectionObserver(onEntry, options);
+
+let target = document.querySelector('#section-one');
+let target2 = document.querySelector('#section-two');
+let target3 = document.querySelector('#section-three');
+let target4 = document.querySelector('#section-four');
+
+console.log(target);
+observer.observe(target);
+observer.observe(target2);
+observer.observe(target3);
+observer.observe(target4);
