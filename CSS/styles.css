@@ -47,6 +47,10 @@ nav {
   justify-content: space-between;
   font-size: 2em;
   padding: 10px 2vw;
+
+  /* This is set because when you use opacity on the sections it changes the stacking content */
+  /* to make sure this is above the section need to set its z-index */
+  z-index: 1;
 }
 
 /*Fade a shadow of the nav-bar in*/
@@ -184,23 +188,21 @@ section {
   justify-content: space-between;
   margin: 0 0 22vh 0;
   max-height: 55vh;
-  transform: scale(0.7);
-  opacity: 1;
+  /* transform: scale(0.7); */
+  opacity: 0;
 }
 
 .visible {
-  animation-fill-mode: both;
+  animation-fill-mode: forwards;
   animation-duration: 1s;
   animation-name: expand;
 }
 
 @keyframes expand {
   from {
-    transform: scale(0.7);
-    opacity: 1;
+    opacity: 0;
   }
   to {
-    transform: scale(1);
     opacity: 1;
   }
 }
