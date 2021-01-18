@@ -1,15 +1,11 @@
-//TODO:
-//REFACTOR THIS CODE
+/****************************************************************************************
+ * When user scrolls the navbar will add a shadow to it to distinguish it from the rest of
+ * the page
+ ****************************************************************************************/
 
-
-
-//get the navbar
-const navbar = document.querySelector('nav');
-
-/*on a scroll event check the page position to determine whether to show the 
-display the shadow of the navbar or not*/
-
+/*check the position of the page when it is scrolled*/
 document.addEventListener('scroll', (event) =>{
+    const navbar = document.querySelector('nav');
     const pageYposition = document.defaultView.scrollY;
     const shadowClass = 'nav-shadow';
     
@@ -20,52 +16,74 @@ document.addEventListener('scroll', (event) =>{
             navbar.classList.add(shadowClass);
         }
     }
-
-    //check to see what section you are in
-
-
-
-
 });
 
-/* dynamically create a navigation bar*/
-//returns a node list of all the elements that are section types
+/****************************************************************************************** 
+ ******************************************************************************************
+ ****************************************************************************************** 
+*/
+
+
+/****************************************************************************************
+ * Dynamically create the nav bar list
+ ****************************************************************************************/
+
+//returns a node list of all the elements that are section tag types
 const sections = document.querySelectorAll('section');
 const sectionDetails = [];
 
-//get the h2 section title from the section html
-sections.forEach((currentValue) => {
+//loop through sections and get title and link information
+sections.forEach((section) => {
     const sectionObj = {
-        link: currentValue.id,
-        title: currentValue.querySelector('h2').innerText
+        link: section.id,
+        title: section.querySelector('h2').innerText
     }
+    //add object to the array
     sectionDetails.push(sectionObj);
-    console.log(currentValue.id);
 });
-
-// console.log(sectionTitles);
 
 //create a html fragment to add into the navbar
 let navbarList = document.createDocumentFragment();
 for (detail of sectionDetails){
+    //destructure object
+    const {link, title} = detail;
+    //create list item
     const navbarItem = document.createElement('li');
-    navbarItem.innerHTML = `<a class="nav-item" data-scroll=${detail.link}>${detail.title}</a><div id="${detail.link}-nav-underline" class="nav-item-underline"></div>`;
+    navbarItem.innerHTML = `<a class="nav-item" data-scroll=${link}>${title}</a><div id="${link}-nav-underline" class="nav-item-underline"></div>`;
     navbarList.appendChild(navbarItem);
 }
 
-// console.log(navbarList);
-// //add the dynmically create nav item list to the nav bar
+//add the dynmically create nav item list to the nav bar
 document.querySelector('.nav-list').appendChild(navbarList);
 
-//implment the nav bar link smooth scroll
+/****************************************************************************************** 
+ ******************************************************************************************
+ ****************************************************************************************** 
+*/
+
+
+
+/******************************************************************************************
+ * Implement the smooth scroll to section on nav bar item click event
+ ******************************************************************************************/
 document.querySelector('nav').addEventListener('click', (event) => {
     const target = event.target;
     if (target.nodeName === 'A'){
         event.preventDefault();
-        console.log(target.dataset.scroll);
+        //get the section, whos ID is the same as the data-scroll attribute, then scroll to it
         document.querySelector(`#${target.dataset.scroll}`).scrollIntoView({behavior: 'smooth', block: "center"});
     }
-})
+});
+
+/********************************************************************************************
+ ********************************************************************************************
+ ********************************************************************************************
+ */
+
+
+
+
+
 
 //try and see what is on the screen
 //using intersection observer
@@ -105,12 +123,26 @@ list.forEach((value) => {
 });
 
 
-//scroll to top
+/****************************
+ * Scroll to the top feature
+ ****************************/
+
+// add a listener on clicking the scroll to top button that scrolls to the window top
 const scrollToTop = document.querySelector('.scroll-to-top');
-const topOfPage = document.querySelector('.nav-title');
-console.log(scrollToTop);
 scrollToTop.addEventListener('click', (event) => {
-    console.log('click');
     window.scrollTo(0,0);
+});
+
+// make scroll to the top button only appear after the user has scrolled down the page
+// a certain amount
+
+document.addEventListener('scroll', (event) => {
+    if (document.defaultView.scrollY > 50){
+        scrollToTop.classList.add('scroll-to-top-visible');
+    } else {
+        if (scrollToTop.classList.contains('scroll-to-top-visible')){
+            scrollToTop.classList.remove('scroll-to-top-visible');
+        }
+    }
 });
 
