@@ -326,6 +326,9 @@ footer {
   background-color: black;
   color: #fff;
   height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .scroll-to-top {

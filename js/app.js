@@ -86,10 +86,10 @@ document.querySelector('nav').addEventListener('click', (event) => {
  */
 
 //set your options for the intersectionObserver 
-//if 0.8 of an element is in the viewport the intersectionObserver fires
+//if 0.7 of an element is in the viewport the intersectionObserver fires
 //root is not included as default is viewport
 let options = {
-    threshold: [0.8]
+    threshold: [0.7]
 };
 
 //create the IntersectionObserver add options and the callback function when it fires
