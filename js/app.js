@@ -149,3 +149,42 @@ document.addEventListener('scroll', (event) => {
  ********************************************************************************************
  ********************************************************************************************
  */
+
+ /**
+  * Rotating Quotes on the header section of the webpage
+  */
+
+// HTML Quotes
+const quoteOneHTML = `<blockquote>Helped me rediscover my passion for books</blockquote> <figcaption>
+                        &mdash; Jeremy Keith
+                        </figcaption>`;
+const quoteTwoHTML = `<blockquote>I have meet friends for life in this great book club</blockquote> <figcaption>&mdash; Claire Page</figcaption>`;
+const quoteThreeHTML = `<blockquote>Love the events and the book recommendations</blockquote> <figcaption> &mdash; Jo Waters</figcaption>`;
+
+const quotes = [quoteOneHTML, quoteTwoHTML, quoteThreeHTML];
+let quoteIndex = 0;
+
+const elem = document.querySelector('.rotating-quotes');
+
+//insert first quote, this runs once
+elem.innerHTML = quotes[quoteIndex];
+quoteIndex = quoteIndex + 1;
+
+//look for animation end and then do things
+elem.addEventListener('animationend', ()=>{
+    if (quoteIndex > quotes.length - 1){
+        quoteIndex = 0;
+    }   
+    console.log('animation has ended');
+    //remove the rotating class from elem
+    console.log(elem);
+    elem.classList.remove('rotating-quotes');
+    //quote the quote text
+
+    void elem.offsetWidth;
+    
+    console.log(quotes[quoteIndex]);
+    elem.innerHTML = quotes[quoteIndex];
+    quoteIndex = quoteIndex + 1;
+    elem.classList.add('rotating-quotes');
+});
