@@ -80,47 +80,46 @@ document.querySelector('nav').addEventListener('click', (event) => {
  ********************************************************************************************
  */
 
+/***
+ * Determine the section currently viewed in the viewport usinf a IntersectionObsever 
+ * Hightlight the nav bar item that corresponds to the section in the view port
+ */
 
-
-
-
-
-//try and see what is on the screen
-//using intersection observer
-
-
-//This is working but i think i should look at transistions in and out of sections
-//TODO:
-//-Investigation how to know if you are entering or exiting the section
-//-Dont toggle class add and remove it and check if the classList contains it
-//-use the bottom border with the right colours to hightlight it
-function onEntry(entry) {
-    for (e of entry){
-        console.log(e);
-        console.log(e.intersectionRatio);
-        console.log(e.target.id);
-        if(e.intersectionRatio > 0.05){
-            //get nav element
-            const elem = document.querySelector(`#${e.target.id}-nav-underline`);
-            console.log(`#${e.target.id}-nav-underline`);
-            console.log(elem);
-            elem.classList.toggle('nav-item-underline-active');
-        }
-    }
-  }
-
+//set your options for the intersectionObserver 
+//if 0.8 of an element is in the viewport the intersectionObserver fires
+//root is not included as default is viewport
 let options = {
-    threshold: [0.9]
+    threshold: [0.8]
 };
 
-let observer = new IntersectionObserver(onEntry, options);
+//create the IntersectionObserver add options and the callback function when it fires
+let observer = new IntersectionObserver((entry) => {
+    for (e of entry){
+        //get the element that has more than 80% in the viewport
+        const elem = document.querySelector(`#${e.target.id}-nav-underline`);
+        //if the element is entering the viewport isIntersecting will be true
+        if(e.isIntersecting){
+            //highlight the nav item that corresponds to the section in viewport
+            elem.classList.add('nav-item-underline-active');
+            e.target.classList.add('visible');
+        } else {
+            //if the elem is leaving the viewport or is not on it then remove nav item highlight
+            elem.classList.remove('nav-item-underline-active');
+        }
+    }
+}, options);
 
 //get all the sections
 const list = document.querySelectorAll('section');
-
+//loop through all the sections and add them to be observed
 list.forEach((value) => {
     observer.observe(value);
 });
+
+/********************************************************************************************
+ ********************************************************************************************
+ ********************************************************************************************
+ */
 
 
 /****************************
@@ -130,7 +129,7 @@ list.forEach((value) => {
 // add a listener on clicking the scroll to top button that scrolls to the window top
 const scrollToTop = document.querySelector('.scroll-to-top');
 scrollToTop.addEventListener('click', (event) => {
-    window.scrollTo(0,0);
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth'});
 });
 
 // make scroll to the top button only appear after the user has scrolled down the page
@@ -146,3 +145,7 @@ document.addEventListener('scroll', (event) => {
     }
 });
 
+/********************************************************************************************
+ ********************************************************************************************
+ ********************************************************************************************
+ */

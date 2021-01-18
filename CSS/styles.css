@@ -184,6 +184,25 @@ section {
   justify-content: space-between;
   margin: 0 0 22vh 0;
   max-height: 55vh;
+  transform: scale(0.7);
+  opacity: 1;
+}
+
+.visible {
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-name: expand;
+}
+
+@keyframes expand {
+  from {
+    transform: scale(0.7);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* #sectionOne {
