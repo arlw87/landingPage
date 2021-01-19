@@ -1,6 +1,7 @@
 # Landing Page Project
 
 ![Operation of the website](./screenshots/operation.gif)
+_A gif showing the operation of the final landing page demonstrating some of the key features_
 
 ## Description
 
@@ -18,9 +19,14 @@ The website provides a simple and clean interface for the user that is responsiv
 
 ### Navigation Bar
 
+![Screenshot of navigation bar and section](./screenshots/NavBarSection.png)
+\*Screenshot shows the shadow in the nav bar and the **Book of the Week** nav link being highlight when the section showing on the page is the **Book of the Week**
+
 The navigation bar provides links to the varies section of the webpage on the right and a link to return to the top of the webpage on the left. The links are created dynamically, depending on what sections are in the HTML, using Javascript. Clicking on the navigational link with smoothly scroll the viewport to that section of the webpage.
 
 The navigation bar is fixed to the top of the viewport, when the user scrolls down from the top of the page the navigation bar has a shadow style added to it to distinguish it from the rest of the pages content. When user hovers over the navigation links a transform effect is used to enlarge the link, to emphasise to the user that their pointer is on that link.
+
+A nav links is highlighted when its correspondind section is displayed on the screen. Each nav link is highlight in a different colour depend on the accent colour of its section.
 
 ### Header Banner
 
