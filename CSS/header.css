@@ -1,0 +1,87 @@
+/* hero banner / header*/
+
+header {
+  display: flex;
+  justify-content: center;
+  height: 90vh;
+  align-items: stretch;
+  padding-bottom: 10vh;
+  /* width: 90vw;
+    margin: 0 auto; */
+  margin: 0 1vw;
+}
+
+.heading-wrapper {
+  height: 50%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.quote-wrapper {
+  height: 50%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.header-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 50%;
+  height: 100%;
+}
+
+.header-image-container {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-max {
+  /* font-size: 5em; */
+  font-size: 3.5em;
+}
+
+.header-image {
+  width: 100%;
+  height: auto;
+}
+.rotating-quotes {
+  animation-name: fadeInfadeOut;
+  animation-duration: 10s;
+  animation-fill-mode: both;
+  opacity: 0;
+}
+
+@keyframes fadeInfadeOut {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header-max {
+    font-size: 4em;
+  }
+  header {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+}

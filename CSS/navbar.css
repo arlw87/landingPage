@@ -1,0 +1,125 @@
+/*nav bar*/
+
+nav {
+  /*sticks the nav bar to the top of the window at all times*/
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  /*********************************************************/
+
+  background-color: #fff;
+  width: 98vw;
+  display: flex;
+  justify-content: space-between;
+  /* font-size: 2em; */
+  font-size: 1.4em;
+  padding: 10px 1vw;
+
+  /* This is set because when you use opacity on the sections it changes the stacking content */
+  /* to make sure this is above the section need to set its z-index */
+  z-index: 1;
+}
+
+/*Fade a shadow of the nav-bar in*/
+.nav-shadow {
+  animation: shadowFadeIn ease-out 2s forwards;
+}
+
+@keyframes shadowFadeIn {
+  0% {
+  }
+  100% {
+    /* box-shadow: 5px 10px; */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  }
+}
+
+.sub-nav {
+  /* width: auto; */
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+ul > li {
+  margin: 0 20px;
+}
+
+.nav-item {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  /* an anchor has to be set to an block or inline-block for transform to work */
+  /* it doesnt work on a inline element */
+  transform: scale(1.1, 1.1);
+}
+
+/* .nav-item-section-active {
+    border-width: 3px;
+  } */
+
+#section-one-nav-underline {
+  border-color: var(--section-one-color);
+}
+
+#section-two-nav-underline {
+  border-color: var(--section-two-color);
+}
+
+#section-three-nav-underline {
+  border-color: var(--section-three-color);
+}
+
+#section-four-nav-underline {
+  border-color: var(--section-four-color);
+}
+
+.nav-title {
+  cursor: pointer;
+}
+
+/* using a pure css method you create a pseudo element after the nav item that you style */
+
+/* .nav-item:after {
+    content: "";
+    display: block;
+    width: 5%;
+    border-bottom: 3px solid pink;
+  } */
+
+.nav-item-underline {
+  width: 0%;
+  transition: 0.5s;
+  border-width: 0 0 3px 0;
+  border-style: solid;
+}
+
+.nav-item-underline-active {
+  /* border: 50px black solid; */
+  width: 100%;
+}
+
+.nav-title-inverse {
+  background-color: rgb(97, 90, 90);
+  color: #fff;
+}
+
+.nav-title:hover {
+  background-color: rgb(34, 34, 34);
+  color: #fff;
+}
+
+@media (min-width: 1200px) {
+  nav {
+    font-size: 2em;
+  }
+}

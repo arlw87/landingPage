@@ -1,0 +1,146 @@
+/*Sections*/
+section {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 15vh auto;
+  min-height: 55vh;
+  opacity: 0;
+  width: 90%;
+}
+
+.visible {
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-name: expand;
+}
+
+@keyframes expand {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* #sectionOne {
+    text-decoration: underline;
+    text-decoration-color: #c0e5fe;
+  } */
+
+.section-header {
+  font-size: 3em;
+  justify-self: flex-start;
+}
+
+#section-one-heading {
+  border-bottom: 2px solid var(--section-one-color);
+}
+
+#section-two-heading {
+  border-bottom: 2px solid var(--section-two-color);
+}
+
+#section-three-heading {
+  border-bottom: 2px solid var(--section-three-color);
+}
+
+#section-four-heading {
+  border-bottom: 2px solid var(--section-four-color);
+}
+
+.section-left {
+  order: -1;
+}
+
+.section-text-container {
+  display: flex;
+  flex-direction: column;
+  /* max-width: 400px; */
+  text-align: center;
+  justify-content: flex-start;
+  max-width: 50%;
+}
+
+.section-image-container {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+
+#section-one-image {
+  background: url("../Images/bow.jpg") center / contain no-repeat;
+}
+
+#section-two-image {
+  background: url("../Images/discussions.jpg") center / contain no-repeat;
+}
+
+#section-three-image {
+  background: url("../Images/stock.jpg") center / contain no-repeat;
+}
+
+#section-four-image {
+  background: url("../Images/calendar.jpg") center / contain no-repeat;
+}
+
+.section-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.section-text {
+  width: 90%;
+  margin: 5px auto;
+  text-align: justify;
+  font-size: 1.2em;
+}
+
+button {
+  align-self: center;
+  margin: 20px;
+  border: 1px solid;
+  font-size: 1.5em;
+  border-radius: 12px;
+  padding: 5px 10px;
+  color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
+
+button:hover {
+  box-shadow: 0px 0px 5px 1px rgb(161, 161, 161);
+  /* box-shadow: 0px 0px 5px 5px #c0e5fe; */
+}
+
+button:active {
+  border: none;
+}
+
+/*#C0E5FE
+  #BBF5D5
+  #FFD8D7
+  #D5D4F5
+  #FFEACB*/
+
+#buttonOne {
+  background-color: var(--section-one-color);
+}
+
+#buttonTwo {
+  background-color: var(--section-two-color);
+}
+
+#buttonThree {
+  background-color: var(--section-three-color);
+}
+
+#buttonFour {
+  background-color: var(--section-four-color);
+}
+
+@media (min-width: 1200px) {
+  section {
+    max-width: 1280px;
+    margin: 0 auto 20vh auto;
+  }
+}
