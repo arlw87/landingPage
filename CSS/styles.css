@@ -52,6 +52,7 @@ footer {
   opacity: 0;
   font-size: 1.8em;
   transition: 1s;
+  background-color: darkgrey;
 }
 
 .scroll-to-top-visible {
