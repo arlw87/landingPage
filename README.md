@@ -19,8 +19,8 @@ The website provides a simple and clean interface for the user that is responsiv
 
 ### Navigation Bar
 
-![Screenshot of navigation bar and section](./screenshots/NavBarSection.png)
-\*Screenshot shows the shadow in the nav bar and the **Book of the Week** nav link being highlight when the section showing on the page is the **Book of the Week\***
+![Screenshot of navigation bar and section](./screenshots/NavBarSection.PNG)
+_Screenshot shows the shadow in the nav bar and the **Book of the Week** nav link being highlight when the section showing on the page is the **Book of the Week**_
 
 The navigation bar provides links to the varies section of the webpage on the right and a link to return to the top of the webpage on the left. The links are created dynamically, depending on what sections are in the HTML, using Javascript. Clicking on the navigational link with smoothly scroll the viewport to that section of the webpage.
 
