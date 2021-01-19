@@ -3,6 +3,9 @@
 @import "./navbar.css";
 @import "./header.css";
 
+/*:root is the pseudo class that matches the root element of the tree
+representing the document so these variable will be accessible to all 
+css selectors*/
 /* define some custom CSS variables for section colours */
 :root {
   --section-one-color: #c0e5fe;
@@ -13,10 +16,11 @@
 
 body {
   margin: 0;
-  font-family: "papyrus";
+  font-family: "papyrus", serif;
   animation: fadeIn ease-in 2s;
 }
 
+/*when page is loaded fade in content*/
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -40,6 +44,7 @@ footer {
   align-items: center;
 }
 
+/*Scroll to top button location is fixed in the viewport*/
 .scroll-to-top {
   width: 55px;
   height: 55px;
@@ -55,6 +60,7 @@ footer {
   background-color: darkgrey;
 }
 
+/*fade in the scrop to top button when this class is added*/
 .scroll-to-top-visible {
   opacity: 0;
   animation-name: visible;

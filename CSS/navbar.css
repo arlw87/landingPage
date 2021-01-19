@@ -1,20 +1,16 @@
-/*nav bar*/
+/*nav bar styling*/
 
 nav {
   /*sticks the nav bar to the top of the window at all times*/
   position: fixed;
   top: 0px;
   left: 0px;
-  /*********************************************************/
-
   background-color: #fff;
   width: 98vw;
   display: flex;
   justify-content: space-between;
-  /* font-size: 2em; */
   font-size: 1.4em;
   padding: 10px 1vw;
-
   /* This is set because when you use opacity on the sections it changes the stacking content */
   /* to make sure this is above the section need to set its z-index */
   z-index: 1;
@@ -35,10 +31,7 @@ nav {
   }
 }
 
-.sub-nav {
-  /* width: auto; */
-}
-
+/*nav items are in a list*/
 ul {
   list-style-type: none;
   display: flex;
@@ -63,10 +56,25 @@ ul > li {
   transform: scale(1.1, 1.1);
 }
 
-/* .nav-item-section-active {
-    border-width: 3px;
-  } */
+.nav-title {
+  cursor: pointer;
+}
 
+/*Nav bar item that highlight on section view animation
+involves .nav-item-underlin and .nav-item-underline-active*/
+.nav-item-underline {
+  width: 0%;
+  transition: 0.5s;
+  border-width: 0 0 3px 0;
+  border-style: solid;
+}
+
+.nav-item-underline-active {
+  width: 100%;
+}
+
+/*using CSS variables for the colors that are set at root*/
+/*colors of the nav item underlines*/
 #section-one-nav-underline {
   border-color: var(--section-one-color);
 }
@@ -81,36 +89,6 @@ ul > li {
 
 #section-four-nav-underline {
   border-color: var(--section-four-color);
-}
-
-.nav-title {
-  cursor: pointer;
-}
-
-/* using a pure css method you create a pseudo element after the nav item that you style */
-
-/* .nav-item:after {
-    content: "";
-    display: block;
-    width: 5%;
-    border-bottom: 3px solid pink;
-  } */
-
-.nav-item-underline {
-  width: 0%;
-  transition: 0.5s;
-  border-width: 0 0 3px 0;
-  border-style: solid;
-}
-
-.nav-item-underline-active {
-  /* border: 50px black solid; */
-  width: 100%;
-}
-
-.nav-title-inverse {
-  background-color: rgb(97, 90, 90);
-  color: #fff;
 }
 
 .nav-title:hover {

@@ -4,10 +4,13 @@ section {
   justify-content: center;
   margin: 0 auto 15vh auto;
   min-height: 55vh;
+  /*section will fade in to view*/
   opacity: 0;
   width: 90%;
 }
 
+/*animation to fade the section into view, when they first enter the
+viewpirt*/
 .visible {
   animation-fill-mode: forwards;
   animation-duration: 1s;
@@ -23,16 +26,12 @@ section {
   }
 }
 
-/* #sectionOne {
-    text-decoration: underline;
-    text-decoration-color: #c0e5fe;
-  } */
-
 .section-header {
   font-size: 3em;
   justify-self: flex-start;
 }
 
+/*various colors of the different sections heading underlining*/
 #section-one-heading {
   border-bottom: 2px solid var(--section-one-color);
 }
@@ -49,6 +48,8 @@ section {
   border-bottom: 2px solid var(--section-four-color);
 }
 
+/*applied to image container if the section has the image set to the
+left*/
 .section-left {
   order: -1;
 }
@@ -56,7 +57,6 @@ section {
 .section-text-container {
   display: flex;
   flex-direction: column;
-  /* max-width: 400px; */
   text-align: center;
   justify-content: flex-start;
   max-width: 50%;
@@ -68,6 +68,7 @@ section {
   width: 50%;
 }
 
+/*images for each section*/
 #section-one-image {
   background: url("../Images/bow.jpg") center / contain no-repeat;
 }
@@ -107,20 +108,13 @@ button {
   cursor: pointer;
 }
 
+/*shadow on button on hover*/
 button:hover {
   box-shadow: 0px 0px 5px 1px rgb(161, 161, 161);
-  /* box-shadow: 0px 0px 5px 5px #c0e5fe; */
 }
 
-button:active {
-  border: none;
-}
-
-/*#C0E5FE
-  #BBF5D5
-  #FFD8D7
-  #D5D4F5
-  #FFEACB*/
+/*each section button has a different color that matches the color
+of the section header highlighting*/
 
 #buttonOne {
   background-color: var(--section-one-color);

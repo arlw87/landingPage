@@ -1,15 +1,27 @@
-/* hero banner / header*/
+/*Header Styling*/
 
 header {
   display: flex;
   justify-content: center;
+  /* heading should take up most of the page */
   height: 90vh;
   align-items: stretch;
+  /* create a gap between heading a main section */
   padding-bottom: 10vh;
-  /* width: 90vw;
-    margin: 0 auto; */
   margin: 0 1vw;
 }
+
+.header-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 50%;
+  height: 100%;
+}
+
+/* heading and quote wrapper added to allow varies quote lengths
+to not affect the position of the main heading as using flexbox*/
 
 .heading-wrapper {
   height: 50%;
@@ -25,15 +37,6 @@ header {
   justify-content: center;
 }
 
-.header-text-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  width: 50%;
-  height: 100%;
-}
-
 .header-image-container {
   width: 50%;
   height: 100%;
@@ -42,15 +45,18 @@ header {
   justify-content: center;
 }
 
+/*Heading font size*/
 .header-max {
-  /* font-size: 5em; */
   font-size: 3.5em;
 }
 
+/*controls the size of the header image*/
 .header-image {
   width: 100%;
   height: auto;
 }
+
+/*Animation to fade quotes in and out*/
 .rotating-quotes {
   animation-name: fadeInfadeOut;
   animation-duration: 10s;
@@ -76,6 +82,7 @@ header {
   }
 }
 
+/*dont increase width of header after certain viewport width*/
 @media (min-width: 1200px) {
   .header-max {
     font-size: 4em;
