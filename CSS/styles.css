@@ -42,11 +42,12 @@ nav {
   /*********************************************************/
 
   background-color: #fff;
-  width: 96vw;
+  width: 98vw;
   display: flex;
   justify-content: space-between;
-  font-size: 2em;
-  padding: 10px 2vw;
+  /* font-size: 2em; */
+  font-size: 1.4em;
+  padding: 10px 1vw;
 
   /* This is set because when you use opacity on the sections it changes the stacking content */
   /* to make sure this is above the section need to set its z-index */
@@ -68,10 +69,15 @@ nav {
   }
 }
 
+.sub-nav {
+  /* width: auto; */
+}
+
 ul {
   list-style-type: none;
   display: flex;
   margin: 0;
+  padding: 0;
 }
 
 ul > li {
@@ -83,7 +89,6 @@ ul > li {
   text-decoration: none;
   color: black;
   cursor: pointer;
-  border-bottom: 0px solid blue;
 }
 
 .nav-item:hover {
@@ -112,7 +117,7 @@ ul > li {
   border-color: var(--section-four-color);
 }
 
-.nav-title:hover {
+.nav-title {
   cursor: pointer;
 }
 
@@ -155,6 +160,8 @@ header {
   height: 90vh;
   align-items: stretch;
   padding-bottom: 10vh;
+  /* width: 90vw;
+  margin: 0 auto; */
 }
 
 .heading-wrapper {
@@ -176,31 +183,46 @@ header {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  margin-left: 40px;
-  width: 35vw;
+  width: 50%;
   height: 100%;
 }
 
 .header-image-container {
-  width: 35vw;
+  width: 50%;
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .header-max {
-  font-size: 5em;
+  /* font-size: 5em; */
+  font-size: 3em;
 }
 
 /*Main*/
 main {
-  max-width: 1024px;
+  /* max-width: 1024px; */
   margin: 0 auto;
 }
 
-@media (min-width: 1440px) {
-  main {
-    max-width: 1300px;
+.header-image {
+  width: 80%;
+  height: auto;
+}
+
+@media (min-width: 1283px) {
+  nav {
+    font-size: 2em;
+  }
+  .header-max {
+    font-size: 4em;
+  }
+  /* main {
+    max-width: 1280px;
+  } */
+  header {
+    max-width: 1280px;
     margin: 0 auto;
   }
 }
@@ -208,9 +230,9 @@ main {
 /*Sections*/
 section {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin: 0 0 22vh 0;
-  max-height: 55vh;
+  min-height: 55vh;
   /* transform: scale(0.7); */
   opacity: 0;
 }
@@ -266,13 +288,13 @@ section {
   /* max-width: 400px; */
   text-align: center;
   justify-content: flex-start;
-  max-width: 50%;
+  max-width: 45%;
 }
 
 .section-image-container {
   display: flex;
   justify-content: center;
-  width: 50%;
+  width: 45%;
 }
 
 #section-one-image {
